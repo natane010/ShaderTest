@@ -182,8 +182,8 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
 
             fixed4 frag(g2f i) : SV_Target
             {
-                //fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 col = _BaseColor;
+                fixed4 col = tex2D(_ReflectTex, i.uv);
+                fixed4 col *= _BaseColor;
                 float3 normalWave = normalize(i.normalWave);
                 float3 toLightDirWave = normalize(_WorldSpaceLightPos0.xyz);
 
@@ -193,12 +193,12 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float R = fresnel( fromVtxToCameraWave, normalWave, 1.000292, 1.3334 );
 
                 //カメラマップの反映
-                float4 col2 = tex2D(_ReflectTex, i.normalWave);
+                //float4 col2 = tex2D(_ReflectTex, i.normalWave);
                 //float3 reflectionDir = reflect(-fromVtxToCameraWave, normalWave);
                 //float4 envelopeColor = UNITY_SAMPLE_TEX2DARRAY(_ReflectTex, reflectionDir);
 
                 // ディフューズ
-                float3 srcColor = col * (1.0 - R) * (col2 * _ReflectAlpha);
+                float3 srcColor = col * (1.0 - R);
                 float diffusePower = dot(normalWave, toLightDirWave);
                 col.rgb *= (max(0.0, diffusePower * R) * _Color.rgb * col.xyz);
                 float3 diffuseColor = (srcColor + diffusePower) * _ReflectAlpha;
