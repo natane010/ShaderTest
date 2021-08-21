@@ -79,6 +79,7 @@
     <None Include="Assets\MyGameFile\Material\shader\other\shaderTest.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\NewCrearWaterWaveInfinity.shader" />
     <None Include="Assets\MyGameFile\Material\shader\used\NewRayTracingShader.raytrace" />
+    <None Include="Assets\Shaders\NormalWater.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\ReflectiveInfinityShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\_Test_Raytracing_Shader.raytrace" />
     <None Include="Assets\MyGameFile\Scripts\test\Shader\NewShader3.shader" />
@@ -96,6 +97,7 @@
     <None Include="Assets\MyGameFile\Material\shader\other\colisionwater.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\NewUnlitShader.shader" />
     <None Include="Assets\TestSomething\Scripts &amp; Shaders\URPWaterShader.shader" />
+    <None Include="Assets\Shaders\ShadowCaster.shader" />
     <None Include="Assets\MyGameFile\Scripts\test\Shader\NewShader1.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\SurfaceInfinityShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\NewWire.shader" />

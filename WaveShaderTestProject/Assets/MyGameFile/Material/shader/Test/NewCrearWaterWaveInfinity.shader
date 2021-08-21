@@ -211,7 +211,7 @@ Shader "Custom/NewCrearWaterWaveInfinity"
                 //float3 vertexToCameraWave = normalize(_WorldSpaceCameraPos - normalWave);
                 float3 vert2CameraWave = normalize(toLightDirWave - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirWave, normalWave), vert2CameraWave)), 30.0f);
-                col.rgb += diffuseColor + specularColor * 0.75f;
+                col.rgb += (diffuseColor + (specularColor * 0.75f)) * _BaseColor;
                 
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col.a = _Alpha;

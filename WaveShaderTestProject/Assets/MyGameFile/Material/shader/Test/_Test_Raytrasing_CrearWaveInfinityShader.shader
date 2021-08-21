@@ -12,6 +12,9 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
         _Flat("_Flat", Range(0, 1)) = 1
         _ReflectTex("RenderTex", 2D) = "white"{}
         _ReflectAlpha("ReflectAlpha", Range(0, 1)) = 0.5
+        _Radius("Radius", Range(0.0,1.0)) = 0.3
+		_BlurShadow("BlurShadow", Range(0.0,50.0)) = 16.0
+		_Speed("Speed", Range(0.0,10.0)) = 2.0
     }
     SubShader
     {
@@ -34,12 +37,15 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
             #pragma geometry geom
             #pragma fragment frag
             //#pragma surface surf Standard fullforwardshadows
-            #pragma target 4.6
+            #pragma target 5.0
             //#pragma fragmentoption ARB_precision_hint_nicest
             #pragma multi_compile_fog
+            #pragma multi_compile_fwdbase nolightmap nodirlightmap nodynlightmap novertexlight
 
             #include "UnityCG.cginc"
-            #include "UnityLightingCommon.cginc" 
+            #include "Lighting.cginc"
+            #include "UnityLightingCommon.cginc"
+            #include "AutoLight.cginc"
 
             float3 lightDir = float3(1.0, 1.0, 1.0);
 
@@ -52,9 +58,6 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
             float _WaveLength;
             float _PlaneHeight;
             float _Flat;
-            float3 _Center;
-            float _ReflectAlpha;
-            sampler2D _ReflectTex;
             
 
             struct appdata
@@ -67,21 +70,20 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
             struct Input 
             {
                 float2 uv_MainTex;
-                float2 uv_ReflectTex;
             };
 
             struct v2g
             {
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
-                float4 position : SV_POSITION;
+                float4 pos : SV_POSITION;
                 float4 vertexWave : TEXCOORD1;
                 float3 normalWave : TEXCOORD2;
             };
 
             struct g2f
             {
-                float4 vertex : SV_POSITION;
+                float4 pos : SV_POSITION;
                 float3 normalWave : TEXCOORD0;
                 float4 diff : COLOR0;
             };
@@ -124,10 +126,10 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float3 forward = -UNITY_MATRIX_V._m20_m21_m22;
                 float3 campos = _WorldSpaceCameraPos;
                 float center_distance = abs(_ProjectionParams.z - _ProjectionParams.y) * 0.5;
-                _Center = campos + forward * (center_distance + abs(_ProjectionParams.y));
-                float3 pos = float3(v.vertex.x * center_distance * 0.5 + _Center.x * 0.2,
+                float3 center = campos + forward * (center_distance + abs(_ProjectionParams.y));
+                float3 pos1 = float3(v.vertex.x * center_distance * 0.5 + center.x * 0.2,
                                     _PlaneHeight,
-                                    v.vertex.z * center_distance * 0.5 + _Center.z * 0.2);
+                                    v.vertex.z * center_distance * 0.5 + center.z * 0.2);
                 v2g o;
 
                 o.vertexWave = mul(unity_ObjectToWorld, v.vertex);
@@ -141,13 +143,14 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 gerstnerWave(o.vertexWave, t + 3.0, 1.8, 0.3, 0.5, float2(0.4, 0.4), oPosWave, oNormalWave);
                 gerstnerWave(o.vertexWave, t, 2.2, 0.4, 0.4, float2(-0.3, 0.6), oPosWave, oNormalWave);
                 o.vertexWave.xyz += oPosWave;
-                o.vertexWave.xyz = o.vertexWave.xyz + pos;
+                o.vertexWave.xyz = o.vertexWave.xyz + pos1;
 
                 // 座標変換
-                o.position = mul(UNITY_MATRIX_VP, o.vertexWave);
-                o.uv = TRANSFORM_TEX(pos.xz * float2(1.0 / 16.0, 1.0 / 16.0), _MainTex);
+                o.pos = mul(UNITY_MATRIX_VP, o.vertexWave);
+                o.uv = TRANSFORM_TEX(pos1.xz * float2(1.0 / 16.0, 1.0 / 16.0), _MainTex);
                 o.normalWave = normalize(oNormalWave);
                 UNITY_TRANSFER_FOG(o, o.vertexWave);
+                
 
                 return o;
             }
@@ -161,17 +164,17 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float3 normalWave = normalize(cross(wp1 - wp0, wp2 - wp1));
 
                 g2f output0;
-                output0.vertex = input[0].position;
+                output0.pos = input[0].pos;
                 output0.normalWave = lerp(input[0].normalWave, normalWave, _Flat);
-                output0.diff = max(0, dot(output0.normalWave, _WorldSpaceLightPos0.xyz)) * _LightColor0;  
+                output0.diff = max(0, dot(output0.normalWave, _WorldSpaceLightPos0.xyz)) * _LightColor0;
 
                 g2f output1;
-                output1.vertex = input[1].position;
+                output1.pos = input[1].pos;
                 output1.normalWave = lerp(input[1].normalWave, normalWave, _Flat);
                 output1.diff = max(0, dot(output1.normalWave, _WorldSpaceLightPos0.xyz)) * _LightColor0;
 
                 g2f output2;
-                output2.vertex = input[2].position;
+                output2.pos = input[2].pos;
                 output2.normalWave = lerp(input[2].normalWave, normalWave, _Flat); 
                 output2.diff = max(0, dot(output2.normalWave, _WorldSpaceLightPos0.xyz)) * _LightColor0;
 
@@ -182,8 +185,8 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
 
             fixed4 frag(g2f i) : SV_Target
             {
-                fixed4 col = tex2D(_ReflectTex, i.uv);
-                fixed4 col *= _BaseColor;
+                //fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = _BaseColor;
                 float3 normalWave = normalize(i.normalWave);
                 float3 toLightDirWave = normalize(_WorldSpaceLightPos0.xyz);
 
@@ -192,33 +195,27 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float3 fromVtxToCameraWave = normalize( _WorldSpaceCameraPos - i.normalWave.xyz );
                 float R = fresnel( fromVtxToCameraWave, normalWave, 1.000292, 1.3334 );
 
-                //カメラマップの反映
-                //float4 col2 = tex2D(_ReflectTex, i.normalWave);
-                //float3 reflectionDir = reflect(-fromVtxToCameraWave, normalWave);
-                //float4 envelopeColor = UNITY_SAMPLE_TEX2DARRAY(_ReflectTex, reflectionDir);
-
                 // ディフューズ
-                float3 srcColor = col * (1.0 - R);
+                //float3 srcColor = col * (1.0 - R) + envelopeColor * R;
                 float diffusePower = dot(normalWave, toLightDirWave);
-                col.rgb *= (max(0.0, diffusePower * R) * _Color.rgb * col.xyz);
-                float3 diffuseColor = (srcColor + diffusePower) * _ReflectAlpha;
+                //col.rgb *= (max(0.0, diffusePower * R) * _Color.rgb * col.xyz);
+                float3 diffuseColor = (diffusePower) * R;
                
                 // スペキュラ
                 //float3 vertexToCameraWave = normalize(_WorldSpaceCameraPos - i.vertexWave.xyz);
                 //float3 vertexToCameraWave = normalize(_WorldSpaceCameraPos - normalWave);
                 float3 vert2CameraWave = normalize(toLightDirWave - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirWave, normalWave), vert2CameraWave)), 30.0f);
-                col.rgb = diffuseColor * (specularColor * 0.75f);
-                //col.rgb = color * specularColor * 0.25f;
-                
+                col.rgb += (diffuseColor + (specularColor * 0.75f)) * _BaseColor;
+                col *= i.diff * SHADOW_ATTENUATION(i);
+
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col.a = _Alpha;
                 return col;
-                 
-                //return float4(color, 1.0);
             }
 
             ENDCG
         }
+        
     }
 }
