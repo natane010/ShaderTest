@@ -37,7 +37,7 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
             #pragma geometry geom
             #pragma fragment frag
             //#pragma surface surf Standard fullforwardshadows
-            #pragma target 5.0
+            #pragma target 4.6
             //#pragma fragmentoption ARB_precision_hint_nicest
             #pragma multi_compile_fog
             #pragma multi_compile_fwdbase nolightmap nodirlightmap nodynlightmap novertexlight
@@ -121,6 +121,43 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 return ( V1 * V1 + V2 * V2 ) * 0.5;
             }
 
+            float rand(float3 co)
+            {
+                return frac(sin(dot(co.xyz, float3(12.9898, 78.233, 56.787))) * 43758.5453);
+            }
+
+            float noise(float3 pos)
+            {
+                float3 ip = floor(pos);
+                float3 fp = smoothstep(0, 1, frac(pos));
+                float4 a = float4(
+                    rand(ip + float3(0, 0, 0)),
+                    rand(ip + float3(1, 0, 0)),
+                    rand(ip + float3(0, 1, 0)),
+                    rand(ip + float3(1, 1, 0)));
+                float4 b = float4(
+                    rand(ip + float3(0, 0, 1)),
+                    rand(ip + float3(1, 0, 1)),
+                    rand(ip + float3(0, 1, 1)),
+                    rand(ip + float3(1, 1, 1)));
+
+                a = lerp(a, b, fp.z);
+                a.xy = lerp(a.xy, a.zw, fp.y);
+                return lerp(a.x, a.y, fp.x);
+            }
+
+
+            float perlin(float3 pos)
+            {
+                return
+                    (noise(pos) * 32 +
+                    noise(pos * 2) * 16 +
+                    noise(pos * 4) * 8 +
+                    noise(pos * 8) * 4 +
+                    noise(pos * 16) * 2 +
+                    noise(pos * 32)) / 63;
+            }
+
             v2g vert(appdata v)
             {
                 float3 forward = -UNITY_MATRIX_V._m20_m21_m22;
@@ -185,6 +222,7 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
 
             fixed4 frag(g2f i) : SV_Target
             {
+                float3 lightDir = _WorldSpaceLightPos0.xyz;
                 //fixed4 col = tex2D(_MainTex, i.uv);
                 fixed4 col = _BaseColor;
                 float3 normalWave = normalize(i.normalWave);
@@ -207,7 +245,10 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float3 vert2CameraWave = normalize(toLightDirWave - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirWave, normalWave), vert2CameraWave)), 30.0f);
                 col.rgb += (diffuseColor + (specularColor * 0.75f)) * _BaseColor;
-                col *= i.diff * SHADOW_ATTENUATION(i);
+                col -= perlin(normalWave.xyz);
+                //col *= perlin(i.pos.xyz * float3(frac(i.normalWave.x * _Time.y), frac(i.normalWave.y * _Time.y), frac(i.normalWave.z * _Time.y)));
+                //col *= perlin(i.pos.xyz * float3(1, 1, frac(i.normalWave.z * _Time.y)));
+                
 
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col.a = _Alpha;
