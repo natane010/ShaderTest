@@ -343,6 +343,7 @@
 "Assets/MyGameFile/Scripts/used/MoveCamera.cs"
 "Assets/MyGameFile/Scripts/used/Player.cs"
 "Assets/MyGameFile/Scripts/used/Ship.cs"
+"Assets/Scripts/TestAnimation.cs"
 "Assets/TestSomething/Scripts & Shaders/WaveSurfaceRenderManager.cs"
 -langversion:8.0
 
