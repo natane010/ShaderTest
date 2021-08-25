@@ -12,6 +12,7 @@ Shader "Custom/NotInfinityWater"
         _ReflectTex("RenderTex", 2D) = "white"{ }
         _ReflectAlpha("ReflectAlpha", Range(0, 1)) = 0.5
         _Radius("Radius", Range(0.0, 1.0)) = 0.3
+        _MaybeHight("MaybeHight", float) = 1.0
     }
     SubShader
     {
@@ -54,6 +55,7 @@ Shader "Custom/NotInfinityWater"
             float _Alpha;
             float _WaveLength;
             float _Flat;
+            float _MaybeHight;
 
             struct appdata
             {
@@ -87,6 +89,8 @@ Shader "Custom/NotInfinityWater"
                 browDir = normalize(browDir);
                 const float pi = 3.1415926535f;
                 const float grav = 9.8f;
+                //float A = _MaybeHight / _WaveLength;
+                //float _2pi_per_L = 2.0f * pi / _MaybeHight;
                 float A = waveLen / _WaveLength;
                 float _2pi_per_L = 2.0f * pi / waveLen;
                 float d = dot(browDir, localVtx.xz);
@@ -96,7 +100,7 @@ Shader "Custom/NotInfinityWater"
                 pos.xz = Q * A * browDir * cos(th);
 
                 // ゲルストナー波の法線
-                float3 normal = float3(0.0, 1.0, 0.0);
+                float3 normal = float3(0.0, 5.0, 0.0);
                 normal.xz = -browDir * R * cos(th) / (7.0f / pi - Q * browDir * browDir * sin(th));
 
                 localVtxPos += pos;
@@ -228,8 +232,8 @@ Shader "Custom/NotInfinityWater"
 
                 float3 vert2CameraWave = normalize(toLightDirW - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vert2CameraWave)), 30.0f);
-                col.rgb += (diffuseColor + (specularColor * 0.75f)) * _BaseColor * R;
-                col.rgb += specularColor * 0.5f;
+                col.rgb += (diffuseColor + (specularColor)) * _BaseColor * R;
+                col.rgb += specularColor;
 
                 col *= perlin(i.normalW);
                 UNITY_APPLY_FOG(i.fogCoord, col);

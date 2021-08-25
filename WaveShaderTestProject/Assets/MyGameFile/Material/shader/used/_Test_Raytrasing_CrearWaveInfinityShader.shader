@@ -245,7 +245,7 @@ Shader "Custom/_Test_Raytrasing_CrearWaveInfinityShader"
                 float3 vert2CameraWave = normalize(toLightDirWave - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirWave, normalWave), vert2CameraWave)), 30.0f);
                 col.rgb += (diffuseColor + (specularColor * 0.75f)) * _BaseColor * R;
-    col += specularColor;
+                col.rgb += specularColor;
                 col -= perlin(normalWave.xyz);
                 //col *= perlin(i.pos.xyz * float3(frac(i.normalWave.x * _Time.y), frac(i.normalWave.y * _Time.y), frac(i.normalWave.z * _Time.y)));
                 //col *= perlin(i.pos.xyz * float3(1, 1, frac(i.normalWave.z * _Time.y)));

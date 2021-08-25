@@ -68,8 +68,8 @@
     <Compile Include="Assets\MyGameFile\Material\shader\Test\_Test_Raytracing_PostEffect.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\other\ColisionWaterRegulation.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\test\TestSketch.cs" />
-    <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
+    <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MyGameFile\Material\shader\other\NewUnlitShader.shader" />

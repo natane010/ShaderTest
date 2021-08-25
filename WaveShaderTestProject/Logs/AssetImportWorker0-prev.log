@@ -1,33 +1,33 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.13f1 (a03098edbbe0) revision 10498200'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1165; Version 2009; 64bit' Language: 'ja' Physical Memory: 32641 MB
+OS: 'Windows 10 Home; OS build 19042.1165; Version 2009; 64bit' Language: 'ja' Physical Memory: 16227 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\2021.1.13f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.1.13f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/mimik/OneDrive/デスクトップ/Shadertest/WaveShaderTestProject
+C:/Users/vantan/Desktop/ShaderTest/WaveShaderTestProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57716
-Successfully changed project path to: C:/Users/mimik/OneDrive/デスクトップ/Shadertest/WaveShaderTestProject
-C:/Users/mimik/OneDrive/デスクトップ/Shadertest/WaveShaderTestProject
+64234
+Successfully changed project path to: C:/Users/vantan/Desktop/ShaderTest/WaveShaderTestProject
+C:/Users/vantan/Desktop/ShaderTest/WaveShaderTestProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 87.62 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 105.78 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.13f1 (a03098edbbe0)
-[Subsystems] Discovering subsystems at path D:/2021.1.13f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/mimik/OneDrive/デスクトップ/Shadertest/WaveShaderTestProject/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/vantan/Desktop/ShaderTest/WaveShaderTestProject/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
-Renderer: GeForce RTX 2080 Ti/PCIe/SSE2
+Renderer: GeForce GTX 1650/PCIe/SSE2
 Vendor:   NVIDIA Corporation
-Version:  4.5.0 NVIDIA 462.30
+Version:  4.5.0 NVIDIA 462.31
 GLES:     0
  GL_AMD_multi_draw_indirect GL_AMD_seamless_cubemap_per_texture GL_AMD_vertex_shader_viewport_index GL_AMD_vertex_shader_layer GL_ARB_arrays_of_arrays GL_ARB_base_instance GL_ARB_bindless_texture GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_conservative_depth GL_ARB_compute_shader GL_ARB_compute_variable_group_size GL_ARB_conditional_render_inverted GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_cull_distance GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_direct_state_access GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_indirect GL_ARB_draw_elements_base_vertex GL_ARB_draw_instanced GL_ARB_enhanced_layouts GL_ARB_ES2_compatibility GL_ARB_ES3_compatibility GL_ARB_ES3_1_compatibility GL_ARB_ES3_2_compatibility GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragmen
 t_coord_conventions GL_ARB_fragment_layer_viewport GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_fragment_shader_interlock GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_gl_spirv GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_ARB_gpu_shader_int64 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_indirect_parameters GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multi_draw_indirect GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_parallel_shader_compile GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_post_depth_coverage GL_ARB_program_interface_query GL_ARB_provoki
@@ -42,468 +42,48 @@ e_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrie
 ap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control
 OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 65537
 Initialize mono
-Mono path[0] = 'D:/2021.1.13f1/Editor/Data/Managed'
-Mono path[1] = 'D:/2021.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/2021.1.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/2021.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000701 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.122174 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.65 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 130.56 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.948 seconds
+- Completed reload, in  4.057 seconds
 Domain Reload Profiling:
-	ReloadAssembly (948ms)
-		BeginReloadAssembly (43ms)
+	ReloadAssembly (4057ms)
+		BeginReloadAssembly (2449ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (420ms)
-			LoadAssemblies (42ms)
+		EndReloadAssembly (768ms)
+			LoadAssemblies (2447ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (140ms)
+			SetupTypeCache (427ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (212ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (264ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (89ms)
+				RefreshPlugins (131ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (89ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
+				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004340 seconds.
+Registered in 0.612893 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\mimik\OneDrive\デスクトップ\Shadertest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\mimik\OneDrive\デスクトップ\Shadertest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 89.35 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.104 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1104ms)
-		BeginReloadAssembly (123ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (935ms)
-			LoadAssemblies (73ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (307ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (408ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (89ms)
-				BeforeProcessingInitializeOnLoad (85ms)
-				ProcessInitializeOnLoadAttributes (223ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4447 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.4 MB.
-System memory in use after: 178.6 MB.
-
-Unloading 62 unused Assets to reduce memory usage. Loaded Objects now: 4858.
-Total: 3.094500 ms (FindLiveObjects: 0.242800 ms CreateObjectMapping: 0.149200 ms MarkObjects: 1.896900 ms  DeleteObjects: 0.804500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/MyGameFile/Material/shader/used/NewRayTracingShader.raytrace
-  artifactKey: Guid(c30608a4b3a97924ba7c326d4d8e1618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/NewRayTracingShader.raytrace using Guid(c30608a4b3a97924ba7c326d4d8e1618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd20a32e7220803905b31257c41fb0da2') in 0.028612 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.074102 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22f10aa1a45545feedfe2165a511d0a') in 0.004556 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.519370 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0a779ca1bbc4707875ee39260af6a5fc') in 0.047147 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 359.822745 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '713883d6d115989ed50312aca91dba9f') in 0.002346 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.652957 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '93ba44d6b97a8fd529a3cb09d863c567') in 0.005778 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.553359 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e8c05bd0acc2b90cfc92bef69a24976b') in 0.004642 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.712139 seconds.
-  path: Assets/MyGameFile/Material/shader/used/waterwave.shader
-  artifactKey: Guid(368a4e260eabf2846a2c5b1bc4313b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/waterwave.shader using Guid(368a4e260eabf2846a2c5b1bc4313b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdfeaf704da9a5114d217e6517fece1a') in 0.001291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.584755 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fcc45c1c2dc20687caa4cc0bb3cdac4') in 0.002212 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 121.107539 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c7939dad9ed47b5fb2e6395a646d38d') in 0.002191 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.657446 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1eac138d11b6c11f05e47b40aa41055e') in 0.004035 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 50.656180 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2852c4bd8742e0346615216037e6703a') in 0.002045 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.741657 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd77f5301c199b74af1806a89ac208d71') in 0.004548 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 68.012722 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aa3b78868a12ab7ac588da52debb2d0') in 0.002341 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.720569 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '77883599b026750fa1603f7ab78630a8') in 0.004919 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.906443 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ffb1f7fad40be23ae03cd97a11fe5d7') in 0.002122 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.644097 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fe6687455d412638479e72be9f10435f') in 0.003948 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.303809 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43562452695d8171c5f588d97bfbecb6') in 0.002115 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.730546 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9358e9e1a7762654432886dd1ed0adda') in 0.004918 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 110.801710 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '454b1e431199dadb85417ffa50c527d7') in 0.002066 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.736462 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b8a5241b2cbf231ab57312b310e2948d') in 0.005051 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.260860 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05ea22bb10b17049217bb9efc84148a0') in 0.002313 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.744482 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'eb3dd84be21ede77a7f54e58f5607212') in 0.003986 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 140.249160 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9c1d161406e7c249c08ebf7ad2ffbc') in 0.002933 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.654316 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '5e829ecf6e506ff08628399927b4c2f5') in 0.004838 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.479846 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '040947c52b02a91d72569768fc5caf3e') in 0.002516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.496405 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f216d29e8c21d28f59a15fe18cd31992') in 0.003946 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.025422 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '516abb8427f302a48dea8308eb41716b') in 0.002068 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.727701 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6c494be218f5a9bb10ef9493e0ba818d') in 0.005248 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 129.949974 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2296ffa69c1908c8b796ef353bfa8439') in 0.002138 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.760311 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '7999ad298c610b4eb4c98f79b0bb3723') in 0.004568 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 121.612039 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec6dd1f735cadf7b8ed42b21b64cc2df') in 0.002260 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.767030 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ce83ad74766d63cb83a87137601b422b') in 0.004532 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.730118 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c51580eaecf2b6677d24bd753819c75') in 0.002547 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.528071 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '451bf13ab11f8c81468058da2ae7f602') in 0.004065 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.897594 seconds.
-  path: Assets/MyGameFile/Material/shader/used/testMaterial.mat
-  artifactKey: Guid(c3efd73e170400b4cbf7a11d98bcc414) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/testMaterial.mat using Guid(c3efd73e170400b4cbf7a11d98bcc414) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '4689cd62ba81cd4f9154da24061cede4') in 0.005772 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 110.342259 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '2b3ac4ec8e23fbb695ac7fb95d013b83') in 0.004529 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.332484 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a84f52fb308094f246a6fe98593d2798') in 0.002658 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 66.108470 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '013ec9da9af3d06b7a5df0203bc2d2a1') in 0.002402 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.599976 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '244dbe1cd64d9fcce04418bdeaf5ad38') in 0.004067 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.648080 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad749d76352b056e877803149a156340') in 0.002429 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.567650 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '5a6eaf3ebeda36ba8c638e8a6103ad4e') in 0.004613 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.388642 seconds.
-  path: Assets/MyGameFile/Material/shader/Test/Wave Reflect Render Texture.renderTexture
-  artifactKey: Guid(158a42635137aae44aa45a724c7586b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/Test/Wave Reflect Render Texture.renderTexture using Guid(158a42635137aae44aa45a724c7586b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfe0168a14572767a8fe4749d3869340') in 0.086956 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 141.306394 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'cefe861aeae686c117b992a346f3246f') in 0.004053 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004045 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\mimik\OneDrive\デスクトップ\Shadertest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\mimik\OneDrive\デスクトップ\Shadertest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.954 seconds
-Domain Reload Profiling:
-	ReloadAssembly (955ms)
-		BeginReloadAssembly (95ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (813ms)
-			LoadAssemblies (70ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (309ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (46ms)
-			SetupLoadedEditorAssemblies (283ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (208ms)
-				ProcessInitializeOnLoadMethodAttributes (4ms)
-				AfterProcessingInitializeOnLoad (2ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (12ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.74 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4336 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 178.0 MB.
-System memory in use after: 175.9 MB.
-
-Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 4881.
-Total: 3.140300 ms (FindLiveObjects: 0.241300 ms CreateObjectMapping: 0.149800 ms MarkObjects: 1.825100 ms  DeleteObjects: 0.923000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 93.785375 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0be01270b644f8c313481c42a042fc3') in 0.013175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 66.548334 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e1479f1e4e3d79cca7ca7f7f707c507') in 0.002151 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 100.303556 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '293485fd72dc541f7de79cb9a38a9bc1') in 0.002342 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 52.920263 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1012ad83f1103568463259a640de53fa') in 0.002186 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 130.103077 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '586136b3fe56eb3fe9dd8da67b7189c5') in 0.002139 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 75.567517 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eac30e47d2d54a87753973db13558e0') in 0.002174 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.128493 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea4daf8b11db1b9e614fac82a8908da6') in 0.002431 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 162.464110 seconds.
-  path: Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader
-  artifactKey: Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyGameFile/Material/shader/used/SurfaceWaveShader.shader using Guid(0a86274dc58f1204cb15657ae2b7dcc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cee2d062504cc935cd5a32722645e04') in 0.002534 seconds 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+Symbol file LoadedFromMemory doesn't match image C:\Users\vantan\Desktop\ShaderTest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\vantan\Desktop\ShaderTest\WaveShaderTestProject\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
