@@ -107,41 +107,27 @@ Shader "Custom/NotInfinityWater"
                 localNormal += normalize(normal);
             }
 
-            float rand(float3 co)
+            fixed2 random2(fixed2 st)
             {
-                return frac(sin(dot(co.xyz, float3(12.9898, 78.233, 56.787))) * 43758.5453);
+            st = fixed2( dot(st,fixed2(127.1,311.7)),
+                           dot(st,fixed2(269.5,183.3)) );
+            return -1.0 + 2.0*frac(sin(st)*43758.5453123);
             }
 
-            float noise(float3 pos)
+            float perlinNoise(fixed2 st) 
             {
-                float3 ip = floor(pos);
-                float3 fp = smoothstep(0, 1, frac(pos));
-                float4 a = float4(
-                    rand(ip + float3(0, 0, 0)),
-                    rand(ip + float3(1, 0, 0)),
-                    rand(ip + float3(0, 1, 0)),
-                    rand(ip + float3(1, 1, 0)));
-                float4 b = float4(
-                    rand(ip + float3(0, 0, 1)),
-                    rand(ip + float3(1, 0, 1)),
-                    rand(ip + float3(0, 1, 1)),
-                    rand(ip + float3(1, 1, 1)));
+                fixed2 p = floor(st);
+                fixed2 f = frac(st);
+                fixed2 u = f*f*(3.0-2.0*f);
 
-                a = lerp(a, b, fp.z);
-                a.xy = lerp(a.xy, a.zw, fp.y);
-                return lerp(a.x, a.y, fp.x);
-            }
+                float v00 = random2(p+fixed2(0,0));
+                float v10 = random2(p+fixed2(1,0));
+                float v01 = random2(p+fixed2(0,1));
+                float v11 = random2(p+fixed2(1,1));
 
-
-            float perlin(float3 pos)
-            {
-                return
-                    (noise(pos) * 32 +
-                    noise(pos * 2) * 16 +
-                    noise(pos * 4) * 8 +
-                    noise(pos * 8) * 4 +
-                    noise(pos * 16) * 2 +
-                    noise(pos * 32)) / 63;
+                return lerp( lerp( dot( v00, f - fixed2(0,0) ), dot( v10, f - fixed2(1,0) ), u.x ),
+                             lerp( dot( v01, f - fixed2(0,1) ), dot( v11, f - fixed2(1,1) ), u.x ), 
+                             u.y)+0.5f;
             }
             float fresnel(in float3 toCameraDirWave, in float3 normalWave, in float n1, in float n2)
             {
@@ -235,7 +221,7 @@ Shader "Custom/NotInfinityWater"
                 col.rgb += (diffuseColor + (specularColor)) * _BaseColor * R;
                 col.rgb += specularColor;
 
-                col *= perlin(i.normalW);
+                col *= perlinNoise(normalW.xy * 8);
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col.a = _Alpha;
                 return col;
