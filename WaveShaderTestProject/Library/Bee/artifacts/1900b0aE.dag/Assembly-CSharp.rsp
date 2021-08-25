@@ -341,6 +341,7 @@
 "Assets/MyGameFile/Scripts/test/testreturn.cs"
 "Assets/MyGameFile/Scripts/test/TestSketch.cs"
 "Assets/MyGameFile/Scripts/used/MoveCamera.cs"
+"Assets/MyGameFile/Scripts/used/MoveMesh.cs"
 "Assets/MyGameFile/Scripts/used/Player.cs"
 "Assets/MyGameFile/Scripts/used/Ship.cs"
 "Assets/Scripts/TestAnimation.cs"
