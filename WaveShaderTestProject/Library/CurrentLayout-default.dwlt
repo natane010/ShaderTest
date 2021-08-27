@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: -1528
-    y: 1123
+    x: 0
+    y: 43
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 708, y: 492}
   m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 6915
+  controlID: 316
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
-  controlID: 6916
+  controlID: 317
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 6917
+  controlID: 318
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 432, y: 271}
   m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 6796
+  controlID: 400
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -349,8 +349,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1528
-    y: 1645
+    x: 0
+    y: 565
     width: 753
     height: 434
   m_ViewDataDictionary: {fileID: 0}
@@ -438,8 +438,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -1528
-    y: 1153
+    x: 0
+    y: 73
     width: 866
     height: 471
   m_ViewDataDictionary: {fileID: 0}
@@ -507,9 +507,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.7071068, y: 0, z: -0, w: -0.7071068}
   m_Size:
-    m_Target: 2079.442
+    m_Target: 2398.541
     speed: 2
-    m_Value: 2079.442
+    m_Value: 2331.2268
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -579,17 +579,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -661
-    y: 1153
+    x: 867
+    y: 73
     width: 516
     height: 471
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2ed2ffff
-      m_LastClickedID: -11730
-      m_ExpandedIDs: 2ecfffff24d2ffff12f9ffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 60f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -658,8 +658,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -774
-    y: 1645
+    x: 754
+    y: 565
     width: 629
     height: 434
   m_ViewDataDictionary: {fileID: 0}
@@ -676,22 +676,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/MyGameFile/Material/shader/used
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/MyGameFile/Material/shader/used
+  - Assets
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: "C:\\Users\\mimik\\OneDrive\\\u30C7\u30B9\u30AF\u30C8\u30C3\u30D7\\Shadertest\\WaveShaderTestProject"
+  m_LastProjectPath: C:\Users\vantan\Desktop\ShaderTest\WaveShaderTestProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: dc650000
-    m_LastClickedID: 26076
-    m_ExpandedIDs: 000000002a6300002c630000a6640000d265000000ca9a3b
+    m_SelectedIDs: fa630000
+    m_LastClickedID: 25594
+    m_ExpandedIDs: 00000000fa630000fc63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -719,7 +719,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002a6300002c63000000ca9a3b
+    m_ExpandedIDs: 00000000fa630000fc63000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -820,8 +820,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -143
-    y: 1153
+    x: 1385
+    y: 73
     width: 534
     height: 926
   m_ViewDataDictionary: {fileID: 0}
