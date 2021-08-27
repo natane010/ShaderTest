@@ -74,6 +74,7 @@
   <ItemGroup>
     <None Include="Assets\MyGameFile\Material\shader\other\NewUnlitShader.shader" />
     <None Include="Assets\Shaders\water_surface.shader" />
+    <None Include="Assets\MyGameFile\Material\shader\used\picture\Phantom_Star.shader" />
     <None Include="Assets\MyGameFile\Scripts\test\Shader\NewShader2.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\StanderdShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\waterwave2shader.shader" />
