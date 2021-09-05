@@ -9,19 +9,21 @@ Shader "Custom/NotInfinityWater"
         _Alpha("alpha", Range(0, 1)) = 0.5
         _WaveLength("WaveLength", float) = 14.0
         _Flat("_Flat", Range(0, 1)) = 1
-        _ReflectTex("RenderTex", 2D) = "white"{ }
-        _ReflectAlpha("ReflectAlpha", Range(0, 1)) = 0.5
+        _ReflectAlpha("ReflectAlpha", float) = 0.5
         _Radius("Radius", Range(0.0, 1.0)) = 0.3
         _MaybeHight("MaybeHight", float) = 1.0
+        _Shift("Shift", float) = 0.1
+        _Distortion("Distortion", float) = 1.0
     }
     SubShader
     {
-        Tags {
+        Tags 
+        {
             "Queue" = "Transparent"
-                       "RenderType" = "Transparent"
-                       "IgnoreProjector" = "True"
-                       "LightMode" = "SRPDefaultUnlit"
-                      }
+            "RenderType" = "Transparent"
+            "IgnoreProjector" = "True"
+            "LightMode" = "SRPDefaultUnlit"
+        }
         LOD 200
 
         ZWrite Off
@@ -56,6 +58,10 @@ Shader "Custom/NotInfinityWater"
             float _WaveLength;
             float _Flat;
             float _MaybeHight;
+            float _ReflectAlpha;
+            float _Shift;
+            sampler2D _CameraOpaqueTexture;
+            float _Distortion;
 
             struct appdata
             {
@@ -74,6 +80,7 @@ Shader "Custom/NotInfinityWater"
                 float4 pos : SV_POSITION;
                 float4 vertexW : TEXCOORD2;
                 float3 normalW : TEXCOORD3;
+                float4 grabPos : TEXCOORD1;
             };
 
             struct g2f
@@ -81,6 +88,7 @@ Shader "Custom/NotInfinityWater"
                 float4 pos : SV_POSITION;
                 float3 normalW : TEXCOORD0;
                 float4 diff : COLOR0;
+                float4 grabPos : TEXCOORD1; 
             };
 
             void gerstnerWave(in float3 localVtx, float t, float waveLen, float Q, float R, float2 browDir, inout float3 localVtxPos, inout float3 localNormal )
@@ -106,12 +114,15 @@ Shader "Custom/NotInfinityWater"
                 localVtxPos += pos;
                 localNormal += normalize(normal);
             }
+            float rand(float2 co)
+            {
+                return frac(sin(dot(co.xy, float2(12.9898, 78.233))) * 43758.5453 * (_Time / 1000));
+            }
 
             fixed2 random2(fixed2 st)
             {
-            st = fixed2( dot(st,fixed2(127.1,311.7)),
-                           dot(st,fixed2(269.5,183.3)) );
-            return -1.0 + 2.0*frac(sin(st)*43758.5453123);
+                st = fixed2( dot(st,fixed2(127.1,311.7)), dot(st,fixed2(269.5,183.3)) );
+                return -1.0 + 2.0*frac(sin(st)*43758.5453123);
             }
 
             float perlinNoise(fixed2 st) 
@@ -149,11 +160,13 @@ Shader "Custom/NotInfinityWater"
                 float3 oPosW = float3(0.0, 0.0, 0.0);
                 float3 oNormalW = float3(0.0, 0.0, 0.0);
                 float t = _Time.y;
-                gerstnerWave(o.vertexW, t + 2.0, 0.8, 0.7, 0.3, float2(0.2, 0.3), oPosW, oNormalW);
-                gerstnerWave(o.vertexW, t, 1.2, 0.3, 0.5, float2(-0.4, 0.7), oPosW, oNormalW);
-                gerstnerWave(o.vertexW, t + 3.0, 1.8, 0.3, 0.5, float2(0.4, 0.4), oPosW, oNormalW);
-                gerstnerWave(o.vertexW, t, 2.2, 0.4, 0.4, float2(-0.3, 0.6), oPosW, oNormalW);
+                gerstnerWave(o.vertexW, t + 2.0, 0.8, 0.7, 0.3, float2(0.2, -1.0) , oPosW, oNormalW);
+                gerstnerWave(o.vertexW, t, 1.2, 0.3, 0.5, float2(-0.4, 0.3), oPosW, oNormalW);
+                gerstnerWave(o.vertexW, t + 3.0, 1.8, 0.3, 0.5, float2(0.4, -0.4), oPosW, oNormalW);
+                gerstnerWave(o.vertexW, t, 2.2, 0.4, 0.4, float2(0, 0.3), oPosW, oNormalW);
                 o.vertexW.xyz += oPosW;
+                float3 perNormalWave = float3(0, rand(v.uv), 0);
+                o.vertexW.xyz += perNormalWave/ 1000;
 
                 // 座標変換
                 o.pos = mul(UNITY_MATRIX_VP, o.vertexW);
@@ -161,6 +174,8 @@ Shader "Custom/NotInfinityWater"
                 //o.uv = TRANSFORM_TEX(pos1.xz * float2(1.0 / 16.0, 1.0 / 16.0), _MainTex);
                 o.normalW = normalize(oNormalW);
                 UNITY_TRANSFER_FOG(o, o.pos);
+
+                o.grabPos = ComputeScreenPos(o.pos);
 
                 return o;
             }
@@ -176,17 +191,20 @@ Shader "Custom/NotInfinityWater"
                 g2f output0;
                 output0.pos = input[0].pos;
                 output0.normalW = lerp(input[0].normalW, normalWave, _Flat);
-                output0.diff = max(0, dot(output0.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
+                output0.diff = max(0, dot(output0.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0; 
+                output0.grabPos = ComputeScreenPos(float4(output0.normalW, 1));
 
                 g2f output1;
                 output1.pos = input[1].pos;
                 output1.normalW = lerp(input[1].normalW, normalWave, _Flat);
                 output1.diff = max(0, dot(output1.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
+                output1.grabPos = ComputeScreenPos(float4(output1.normalW, 1));
 
                 g2f output2;
                 output2.pos = input[2].pos;
                 output2.normalW = lerp(input[2].normalW, normalWave, _Flat);
                 output2.diff = max(0, dot(output2.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
+                output2.grabPos = ComputeScreenPos(float4(output2.normalW, 1));
 
                 outStream.Append(output0);
                 outStream.Append(output1);
@@ -197,7 +215,12 @@ Shader "Custom/NotInfinityWater"
             {
                 // sample the texture
                 //fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 col = _BaseColor;
+                float3 bump = UnpackNormal(tex2D(_MainTex, i.normalW));
+	            float4 grabUV = i.grabPos;
+	            grabUV.xy = (i.grabPos.xy * _Shift + (bump.xy * _Distortion)) / i.grabPos.w;
+                
+                fixed4 col = tex2D(_CameraOpaqueTexture, grabUV.xy + _Shift);
+                col *= _BaseColor;
                 float3 normalW = normalize(i.normalW);
 
                 // フレネル反射率算出
@@ -212,23 +235,22 @@ Shader "Custom/NotInfinityWater"
                 float3 diffuseColor = (diffusePower) * R;
 
                 // スペキュラ
-                //float3 vertexToCameraW = normalize(_WorldSpaceCameraPos - i.vertexW.xyz);
+                //float3 vertexToCameraW = normalize(_WorldSpaceCameraPos - i.pos.xyz);
 
                 //float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vertexToCameraW)), 4.0f);
 
                 float3 vert2CameraWave = normalize(toLightDirW - fromVtxToCameraWave);
-                float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vert2CameraWave)), 30.0f);
+                float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vert2CameraWave)), 3.0f);
                 col.rgb += (diffuseColor + (specularColor)) * _BaseColor * R;
-                col.rgb += specularColor;
-
-                col *= perlinNoise(normalW.xy * 8);
+                col.rgb *= specularColor * R * _ReflectAlpha;
+                float2 perNRandom = random2(i.normalW.xy);
+                col *= perlinNoise(normalW.xy * 20);
+                col += perlinNoise(perNRandom) * 0.1;
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                col.a = _Alpha;
+                col.a *= _Alpha;
                 return col;
             }
             ENDCG
         }
-
-
     }
 }

@@ -3,6 +3,7 @@ Shader "CustomPicture/Phantom_Star"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _AddTime ("AddTime", float) = 1.0
     }
     SubShader
     {
@@ -39,6 +40,7 @@ Shader "CustomPicture/Phantom_Star"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _AddTime;
 
 
             float2x2 rot(float a)
@@ -71,16 +73,14 @@ Shader "CustomPicture/Phantom_Star"
                 for (int i = 0; i < 5; i++)
                 {
                     p = abs(p) - 1.0;
-                    float2 a1 = mul(p.xy, rot(_Time * 0.3));
-                    //p.xy *= rot(_Time * 0.3);
+                    float2 a1 = mul(p.xy, rot(_Time * 0.3));//p.xy *= rot(_Time * 0.3);
                     p.xy = a1;
-                    float2 a2 = mul(p.xz, rot(_Time * 0.1));
+                    float2 a2 = mul(p.xz, rot(_Time * 0.1));//p.xz *= rot(_Time * 0.1);
                     p.xz = a2;
-                    //p.xz *= rot(_Time * 0.1);
                 }
-                float2 a3 = mul(p.xz, rot(_Time));
+                float2 a3 = mul(p.xz, rot(_Time));//p.xz *= rot(_Time.y);
                 p.xz = a3;
-                //p.xz *= rot(_Time);
+                
                 return box(p, float3(0.4, 0.8, 0.3));
             }
 
@@ -103,14 +103,19 @@ Shader "CustomPicture/Phantom_Star"
                 return o;
             }
 
-            fixed4 frag (v2f_img i) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
+                float time = _Time * _AddTime;
+                float timeX = _Time.x * _AddTime;
+                float timeY = _Time.y * _AddTime;
+                float timeZ = _Time.z * _AddTime;
+
                 float2 p = (i.uv * _ScreenParams.xy * 2.0 - _ScreenParams.xy) / min(_ScreenParams.x, _ScreenParams.y);
-                float cp = -3.0 * _Time;
-                float3 cPos = float3(0.0, 0.0, cp);
-                // vec3 cPos = vec3(0.3*sin(iTime*0.8), 0.4*cos(iTime*0.3), -6.0 * iTime);
+                float cp = -3.0 * time;
+                //float3 cPos = float3(0.0, 0.0, cp);
+                float3 cPos = float3(0.3f*sin(0.8f*timeX), 0.4f*cos(timeY*0.3f), -6.0f * timeZ);
                 float3 cDir = normalize(float3(0.0, 0.0, -1.0));
-                float cu = sin(_Time); 
+                float cu = sin(time); 
                 float3 cUp = float3(cu, 1.0, 0.0);
                 float3 cSide = cross(cDir, cUp);
 
@@ -125,7 +130,7 @@ Shader "CustomPicture/Phantom_Star"
                     float dist = map(pos, cPos);
                     dist = max(abs(dist), 0.02);
                     float a = exp(-dist * 3.0);
-                    float ifmod = fmod(length(pos) + 24.0 * _Time, 30.0);
+                    float ifmod = fmod(length(pos) + 24.0 * time, 30.0);
                     if (ifmod < 3.0f)
                     {
                         a *= 2.0;
@@ -135,7 +140,7 @@ Shader "CustomPicture/Phantom_Star"
                     t += dist * 0.5;
                 }
 
-                float3 col = float3(acc * 0.01, acc * 0.011 + acc2 * 0.002, acc * 0.012 + acc2 * 0.005);
+                float3 col = float3(acc, acc * 1.1 + acc2 * 0.8, acc * 1.2 + acc2 * 0.5);
                 float4 fragColor = float4(col, 1.0 - t * 0.03);
                 return fragColor;
             }

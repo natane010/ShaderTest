@@ -81,7 +81,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.7
+    - _Alpha: 0.814
     - _AlphaClip: 0
     - _Atten: 0.5
     - _Blend: 0
@@ -94,9 +94,10 @@ Material:
     - _DeltaUV: 30
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Distortion: 2
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Flat: 0.02
+    - _Flat: 0.01
     - _GlossMapScale: 0
     - _Glossiness: 0.357
     - _GlossyReflections: 0
@@ -106,10 +107,11 @@ Material:
     - _Parallax: 0.005
     - _PlaneHeight: 1
     - _QueueOffset: 0
-    - _Radius: 0.277
+    - _Radius: 0.27
     - _ReceiveShadows: 1
-    - _ReflectAlpha: 0.264
+    - _ReflectAlpha: 1400
     - _S2: 0.244
+    - _Shift: 2
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -120,10 +122,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.6299668, b: 0.8113208, a: 1}
+    - _BaseColor: {r: 0, g: 0.7777779, b: 1, a: 1}
     - _Color: {r: 0, g: 0.128624, b: 0.4056604, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Spec: {r: 1, g: 1, b: 1, a: 1}
+    - _Spec: {r: 0, g: 0.5664313, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1629125343089708313
