@@ -80,6 +80,7 @@
     <None Include="Assets\MyGameFile\Material\shader\other\waterwave2shader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\OnShipMoveWater.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\shaderTest.shader" />
+    <None Include="Assets\Shaders\WaterNewSurgeWave.shader" />
     <None Include="Assets\MyGameFile\Material\shader\used\NewCrearWaterWaveInfinity.shader" />
     <None Include="Assets\Shaders\NormalWater.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\ReflectiveInfinityShader.shader" />

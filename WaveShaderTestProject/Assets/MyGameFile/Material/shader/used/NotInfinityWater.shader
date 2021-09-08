@@ -248,7 +248,7 @@ Shader "Custom/NotInfinityWater"
                 col *= perlinNoise(normalW.xy * 20);
                 col += perlinNoise(perNRandom) * 0.1;
                 UNITY_APPLY_FOG(i.fogCoord, col);
-                col = (col * grabCol) / 2;
+                col = (col * grabCol);
                 col.a *= _Alpha;
                 return col;
             }
