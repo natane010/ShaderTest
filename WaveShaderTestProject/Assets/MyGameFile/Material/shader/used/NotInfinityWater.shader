@@ -215,12 +215,13 @@ Shader "Custom/NotInfinityWater"
             {
                 // sample the texture
                 //fixed4 col = tex2D(_MainTex, i.uv);
-                float3 bump = UnpackNormal(tex2D(_MainTex, i.normalW));
+                float3 bump = i.normalW;
 	            float4 grabUV = i.grabPos;
 	            grabUV.xy = (i.grabPos.xy * _Shift + (bump.xy * _Distortion)) / i.grabPos.w;
                 
-                fixed4 col = tex2D(_CameraOpaqueTexture, grabUV.xy + _Shift);
-                col *= _BaseColor;
+                fixed4 grabCol = tex2D(_CameraOpaqueTexture, grabUV.xy + _Shift);
+                
+                fixed4 col = _BaseColor;
                 float3 normalW = normalize(i.normalW);
 
                 // ÉtÉåÉlÉãîΩéÀó¶éZèo
@@ -247,6 +248,7 @@ Shader "Custom/NotInfinityWater"
                 col *= perlinNoise(normalW.xy * 20);
                 col += perlinNoise(perNRandom) * 0.1;
                 UNITY_APPLY_FOG(i.fogCoord, col);
+                col = (col * grabCol) / 2;
                 col.a *= _Alpha;
                 return col;
             }
