@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\MyGameFile\Scripts\used\Ship.cs" />
     <Compile Include="Assets\BruteForce-GrassShader\Scripts\BF_FPSDisplay.cs" />
+    <Compile Include="Assets\NatureManufacture Assets\NatureManufacture Wind\NM_Wind.cs" />
     <Compile Include="Assets\Scripts\TestAnimation.cs" />
     <Compile Include="Assets\BruteForce-GrassShader\Extra\AA\Scripts\TemporalReprojection.cs" />
     <Compile Include="Assets\BruteForce-GrassShader\Extra\AA\Scripts\VelocityBuffer.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Assets\BruteForce-GrassShader\Scripts\BF_SetInteractiveShaderEffects.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
-    <Compile Include="Assets\NatureManufacture Assets\NatureManufacture Wind\NM_Wind.cs" />
+    <Compile Include="Assets\ALP8310_Assets\Nature Package - Forest Environment_\scripts\Rotate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MyGameFile\Material\shader\other\NewUnlitShader.shader" />
