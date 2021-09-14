@@ -335,7 +335,6 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/VSSettingsProvider.ref.dll"
-"Assets/ALP8310_Assets/Nature Package - Forest Environment_/scripts/Rotate.cs"
 "Assets/BruteForce-GrassShader/Extra/AA/Scripts/EffectBase.cs"
 "Assets/BruteForce-GrassShader/Extra/AA/Scripts/Extensions.cs"
 "Assets/BruteForce-GrassShader/Extra/AA/Scripts/FrustumJitter.cs"

@@ -86,7 +86,6 @@
     <Compile Include="Assets\BruteForce-GrassShader\Scripts\BF_Terrain.cs" />
     <Compile Include="Assets\BruteForce-GrassShader\Extra\AA\Scripts\EffectBase.cs" />
     <Compile Include="Assets\BruteForce-GrassShader\Scripts\BF_SetInteractiveShaderEffects.cs" />
-    <Compile Include="Assets\ALP8310_Assets\Nature Package - Forest Environment_\scripts\Rotate.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
   </ItemGroup>

@@ -253,16 +253,16 @@ Properties
                 col.rgb += (diffuseColor + (specularColor)) * _BaseColor * R;
                 col.rgb *= specularColor * R * _ReflectAlpha;
                 float2 perNRandom = random2(i.normalW.xy);
-                col *= perlinNoise(normalW.xy * 20);
-                col += perlinNoise(perNRandom) * 0.1;
+                col *= perlinNoise(normalW.xy * 10);
+                col += perlinNoise(perNRandom) * 0.01;
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col = (col);
                 col.a *= _Alpha;
 
                 uv *= col;
-                uv = (uv + _Distortion) * rand(uv);
+                uv = (uv + _Distortion) * rand(uv) * perlinNoise(perNRandom);
 
-                return tex2D(_CameraOpaqueTexture, uv) * _Color * col;
+                return tex2D(_CameraOpaqueTexture, uv) * col;
                 //return tex2D(_CameraOpaqueTexture, grabUV.xy) * ((col + _Color) / 2);
             }
             ENDCG
