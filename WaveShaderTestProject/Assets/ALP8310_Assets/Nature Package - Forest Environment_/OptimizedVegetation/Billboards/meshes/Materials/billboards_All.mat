@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: billboards_All
+  m_Shader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _USEMOTION_MAIN_ON
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainAlbedoTex:
+        m_Texture: {fileID: 2800000, guid: ddef24cebabeb6a448abfcb28d204550, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ddef24cebabeb6a448abfcb28d204550, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _AdvancedCat: 0
+    - _AlphaClipInteractive: 0
+    - _Banner: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.4
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EnableExternalAlpha: 0
+    - _GlobalColors: 1
+    - _GlobalOverlay: 1
+    - _GlobalOverlayMode: 1
+    - _GlobalSettingsCat: 0
+    - _GlobalSize: 1
+    - _GlobalSizeFade: 1
+    - _GlobalWetness: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _InteractionAmplitude: 0
+    - _InvFade: 1
+    - _IsCrossShader: 1
+    - _IsLitShader: 1
+    - _IsSimpleShader: 1
+    - _IsStandardPipeline: 1
+    - _IsTVEShader: 1
+    - _IsUpdated: 0
+    - _IsVersion: 120
+    - _MainColorMode: 1
+    - _MainMaskValue: 0
+    - _MainNormalValue: 0
+    - _MainShadingCat: 0
+    - _MaterialShadingCat: 0
+    - _MaterialShadingSpaceDrawer: 0
+    - _MessageCrossSubsurfaceMask: 0
+    - _MessageHeightMap: 0
+    - _MessageLeafSubsurfaceMask: 0
+    - _Metallic: 0
+    - _Mode: 3
+    - _MotionAmplitude_10: 0
+    - _MotionCat: 0
+    - _MotionMode: 0
+    - _MotionScale_10: 0
+    - _MotionSpeed_10: 2
+    - _MotionVariation_10: 0
+    - _ObjectSmoothnessValue: 0
+    - _ObjectThicknessValue: 0
+    - _OcclusionStrength: 1
+    - _OverlayUVTilling: 1
+    - _Parallax: 0.02
+    - _PivotMode: 0
+    - _RenderMode_ResetInteractive: 0
+    - _RenderMode_TransparentInteractive: 0
+    - _RenderingCat: 0
+    - _Shininess: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _SubsurfaceMaxValue: 1
+    - _SubsurfaceMessageStandard2: 0
+    - _SubsurfaceMinValue: 0
+    - _SubsurfaceMode: 0
+    - _SubsurfaceValue: 1
+    - _UVSec: 0
+    - _UseMotion_Main: 1
+    - _VariationMode: -1
+    - _VertexOcclusion: 0
+    - _ZWrite: 1
+    - __blend: 0
+    - __clip: 0
+    - __cliptreshold: 0
+    - __cull: 0
+    - __dirty: 1
+    - __dst: 0
+    - __normals: 0
+    - __premul: 0
+    - __priority: 0
+    - __src: 1
+    - __surface: 0
+    - __zw: 1
+    m_Colors:
+    - _Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainUVs: {r: 1, g: 1, b: 0, a: 0}
+    - _MaxBoundsInfo: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SubsurfaceColor: {r: 0.3315085, g: 0.490566, b: 0, a: 1}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    - __normalsoptions: {r: -1, g: -1, b: -1, a: 0}
