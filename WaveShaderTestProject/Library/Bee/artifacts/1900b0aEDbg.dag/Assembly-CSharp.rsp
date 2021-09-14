@@ -361,6 +361,7 @@
 "Assets/MyGameFile/Scripts/used/MoveMesh.cs"
 "Assets/MyGameFile/Scripts/used/Player.cs"
 "Assets/MyGameFile/Scripts/used/Ship.cs"
+"Assets/NatureManufacture Assets/NatureManufacture Wind/NM_Wind.cs"
 "Assets/Scripts/TestAnimation.cs"
 "Assets/TestSomething/Scripts & Shaders/WaveSurfaceRenderManager.cs"
 -langversion:8.0
