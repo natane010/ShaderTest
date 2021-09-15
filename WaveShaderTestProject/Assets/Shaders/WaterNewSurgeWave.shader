@@ -23,13 +23,14 @@ Properties
             "Queue" = "Transparent"
             "RenderType" = "Transparent"
             "IgnoreProjector" = "True"
-            "LightMode" = "SRPDefaultUnlit"
+            "LightMode" = "SRPDefaultUnLit"
         }
         LOD 200
 
         ZWrite Off
         Blend SrcAlpha OneMinusSrcAlpha
 
+        //CameraOpaqueTexture{ "_CameraOpaqueTexture" }
 
         Pass
         {

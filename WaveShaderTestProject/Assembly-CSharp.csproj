@@ -81,9 +81,10 @@
     <None Include="Assets\MyGameFile\Material\shader\other\OnShipMoveWater.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\shaderTest.shader" />
     <None Include="Assets\Shaders\WaterNewSurgeWave.shader" />
+    <None Include="Assets\Shaders\flemingShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\used\NewCrearWaterWaveInfinity.shader" />
     <None Include="Assets\Shaders\NormalWater.shader" />
-    <None Include="Assets\MyGameFile\Material\shader\Test\ReflectiveInfinityShader.shader" />
+    <None Include="Assets\Shaders\ReflectiveInfinityShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\Test\_Test_Raytracing_Shader.raytrace" />
     <None Include="Assets\MyGameFile\Scripts\test\Shader\NewShader3.shader" />
     <None Include="Assets\MyGameFile\Material\shader\used\waterwave.shader" />

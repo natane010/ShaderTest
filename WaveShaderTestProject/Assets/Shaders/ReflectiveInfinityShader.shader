@@ -5,10 +5,17 @@ Shader "Custom/ReflectiveInfinityShader"
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Color", Color) =  (1.0, 1.0, 1.0, 1.0)
         _PlaneHeight("PlaneHeight", float) = 1.0
+        _Alpha("alpha", Range(0, 1)) = 0.5
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags 
+        { 
+            "RenderType"="Transparent" 
+            "Queue" = "Transparent"
+            "IgnoreProjector" = "True"
+            "LightMode" = "SRPDefaultUnlit"
+        }
         Cull Off
         LOD 100
 
@@ -42,6 +49,7 @@ Shader "Custom/ReflectiveInfinityShader"
             fixed4 _MainTex_ST;
             float _PlaneHeight;
             float4 _Color;
+            float _Alpha;
 
             v2f vert(appdata v)
             {
@@ -79,6 +87,7 @@ Shader "Custom/ReflectiveInfinityShader"
 
                 // Reflection ProbeÇ™HDRê›íËÇæÇ¡ÇΩéûÇ…ïKóvÇ»èàóù
                 refColor.rgb = DecodeHDR(refColor, unity_SpecCube0_HDR);
+                refColor.a = _Alpha;
                 return refColor;
             }
 
