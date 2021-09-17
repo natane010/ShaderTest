@@ -66,6 +66,8 @@ Properties
             float _Distortion;
             sampler2D _DistortionTex;
 
+            float4 RayPosition;
+
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -84,6 +86,7 @@ Properties
                 float4 vertexW : TEXCOORD2;
                 float3 normalW : TEXCOORD3;
                 float4 grabPos : TEXCOORD1;
+                float3 worldPos : WORLD_POS;
             };
 
             struct g2f
@@ -92,6 +95,7 @@ Properties
                 float3 normalW : TEXCOORD0;
                 float4 diff : COLOR0;
                 float4 grabPos : TEXCOORD1; 
+                float3 worldPos : WORLD_POS;
             };
 
             void gerstnerWave(in float3 localVtx, float t, float waveLen, float Q, float R, float2 browDir, inout float3 localVtxPos, inout float3 localNormal )
@@ -196,18 +200,21 @@ Properties
                 output0.normalW = lerp(input[0].normalW, normalWave, _Flat);
                 output0.diff = max(0, dot(output0.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output0.grabPos = ComputeScreenPos(float4(output0.normalW, 1));
+                output0.worldPos = input[0].worldPos;
 
                 g2f output1;
                 output1.pos = input[1].pos;
                 output1.normalW = lerp(input[1].normalW, normalWave, _Flat);
                 output1.diff = max(0, dot(output1.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output1.grabPos = ComputeScreenPos(float4(output1.normalW, 1));
+                output1.worldPos = input[0].worldPos;
 
                 g2f output2;
                 output2.pos = input[2].pos;
                 output2.normalW = lerp(input[2].normalW, normalWave, _Flat);
                 output2.diff = max(0, dot(output2.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output2.grabPos = ComputeScreenPos(float4(output2.normalW, 1));
+                output2.worldPos = input[0].worldPos;
 
                 outStream.Append(output0);
                 outStream.Append(output1);
@@ -217,7 +224,7 @@ Properties
             fixed4 frag(g2f i) : SV_Target
             {
                 // sample the texture
-                //fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_MainTex, i.pos);
                 //float3 bump = i.normalW;
                 //float4 grabUV = i.grabPos;
                 //grabUV.xy = (i.grabPos.xy * _Shift * rand(grabUV.xy) + (bump.xy * _Distortion)) / i.grabPos.w;
@@ -230,7 +237,7 @@ Properties
 
                 //fixed4 col = tex2D(_CameraOpaqueTexture, grabUV.xy + _Shift);
 
-                fixed4 col = _BaseColor;
+                //fixed4 col = _BaseColor;
                 float3 normalW = normalize(i.normalW);
 
                 // フレネル反射率算出
@@ -247,6 +254,9 @@ Properties
                 // スペキュラ
                 //float3 vertexToCameraW = normalize(_WorldSpaceCameraPos - i.pos.xyz);
 
+
+                float distance1 = distance(RayPosition, i.worldPos);
+
                 //float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vertexToCameraW)), 4.0f);
 
                 float3 vert2CameraWave = normalize(toLightDirW - fromVtxToCameraWave);
@@ -260,11 +270,17 @@ Properties
                 col = (col);
                 col.a *= _Alpha;
 
+                if (distance1 < 0.1)
+                {
+                    col.xyz = float3(0, 0, 0); 
+                }
+                
                 uv *= col;
                 uv = (uv + _Distortion) * rand(uv);
 
-                return tex2D(_CameraOpaqueTexture, uv) * _Color * col;
+                //return tex2D(_CameraOpaqueTexture, uv) * _Color * col;
                 //return tex2D(_CameraOpaqueTexture, grabUV.xy) * ((col + _Color) / 2);
+                return col;
             }
             ENDCG
         }
