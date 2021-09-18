@@ -12,7 +12,7 @@ public class ShadowRenderer : MonoBehaviour
     /// <summary>
     /// shaderÇ≈íËã`çœÇ›ÇÃç¿ïWïœêîñº
     /// </summary>
-    [SerializeField]private string propName;
+    [SerializeField] private string propName;
 
     private Material mat;
 
@@ -30,19 +30,16 @@ public class ShadowRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = -(rightObj.transform.position) + targetObj.transform.position;
-        Ray shadowRay = new Ray(rightObj.transform.position, dir);
+        Vector3 dir = targetObj.transform.position - (rightObj.transform.position);
+        Ray shadowRay = new Ray(rightObj.transform.position, dir * Mathf.Infinity);
         RaycastHit hitPosition = new RaycastHit();
         bool isHit = Physics.Raycast(shadowRay, out hitPosition);
+        Debug.DrawRay(shadowRay.origin, shadowRay.direction * Mathf.Infinity, Color.red, Mathf.Infinity, false);
 
         if (isHit)
         {
             print(hitPosition.point);
             mat.SetVector(propName, hitPosition.point);
-        }
-        else
-        {
-            
         }
     }
 }

@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &41068065
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2356,6 +2356,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wavemesh
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b24d9522ce9761f46999ea9233a74778, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: b24d9522ce9761f46999ea9233a74778, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2841,7 +2845,7 @@ Transform:
   m_GameObject: {fileID: 778813323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1645935243}
   m_Father: {fileID: 0}
@@ -3610,14 +3614,13 @@ GameObject:
   - component: {fileID: 970593112}
   - component: {fileID: 970593111}
   - component: {fileID: 970593110}
-  - component: {fileID: 970593114}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &970593110
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3652,7 +3655,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddafcb02a6331774ab8769a58b487539, type: 2}
+  - {fileID: 2100000, guid: 80846d43eda84e740a89418c875a01d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3696,39 +3699,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!215 &970593114
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970593109}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 1
-  m_RefreshMode: 1
-  m_TimeSlicingMode: 1
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_BoxSize: {x: 10000, y: 10000, z: 10000}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 25000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 1
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_Importance: 1
-  m_CustomBakedTexture: {fileID: 0}
 --- !u!4 &990384978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b24d9522ce9761f46999ea9233a74778, type: 3}
@@ -4431,7 +4401,7 @@ Terrain:
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -7212,7 +7182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e14bcd87a38ac47bcc86a6bcc58768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _renderer: {fileID: 41068066}
+  _renderer: {fileID: 308064963}
   targetObj: {fileID: 778813323}
   propName: RayPosition
   rightObj: {fileID: 1780691221}
@@ -7237,11 +7207,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994174138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b37c63bd02988ca4d9056aad5b1e457e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 41068066}
 --- !u!1 &2035699690
 GameObject:
   m_ObjectHideFlags: 0

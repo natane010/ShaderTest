@@ -13,8 +13,7 @@ Properties
         _Radius("Radius", Range(0.0, 1.0)) = 0.3
         _MaybeHight("MaybeHight", float) = 1.0
         _Shift("Shift", float) = 0.1
-        _Distortion("Distortion", float) = 1.0
-        _DistortionTex("Distortion Texture(RG)", 2D) = "grey" { }
+        _DisColor("DisColor", float) = 1.0
     }
     SubShader
     {
@@ -61,10 +60,8 @@ Properties
             float _Flat;
             float _MaybeHight;
             float _ReflectAlpha;
-            float _Shift;
-            sampler2D _CameraOpaqueTexture;
-            float _Distortion;
-            sampler2D _DistortionTex;
+            float _DisColor;
+           
 
             float4 RayPosition;
 
@@ -83,10 +80,9 @@ Properties
                 float2 uv : TEXCOORD0;
                 UNITY_FOG_COORDS(1)
                 float4 pos : SV_POSITION;
-                float4 vertexW : TEXCOORD2;
-                float3 normalW : TEXCOORD3;
-                float4 grabPos : TEXCOORD1;
-                float3 worldPos : WORLD_POS;
+                float4 vertexW : TEXCOORD1;
+                float3 normalW : TEXCOORD2;
+                float4 grabPos : TEXCOORD3;
             };
 
             struct g2f
@@ -94,8 +90,7 @@ Properties
                 float4 pos : SV_POSITION;
                 float3 normalW : TEXCOORD0;
                 float4 diff : COLOR0;
-                float4 grabPos : TEXCOORD1; 
-                float3 worldPos : WORLD_POS;
+                float4 grabPos : TEXCOORD1;
             };
 
             void gerstnerWave(in float3 localVtx, float t, float waveLen, float Q, float R, float2 browDir, inout float3 localVtxPos, inout float3 localNormal )
@@ -159,7 +154,6 @@ Properties
 
             v2g vert(appdata v)
             {
-
                 v2g o;
 
                 o.vertexW = mul(unity_ObjectToWorld, v.vertex);
@@ -200,21 +194,18 @@ Properties
                 output0.normalW = lerp(input[0].normalW, normalWave, _Flat);
                 output0.diff = max(0, dot(output0.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output0.grabPos = ComputeScreenPos(float4(output0.normalW, 1));
-                output0.worldPos = input[0].worldPos;
-
+               
                 g2f output1;
                 output1.pos = input[1].pos;
                 output1.normalW = lerp(input[1].normalW, normalWave, _Flat);
                 output1.diff = max(0, dot(output1.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output1.grabPos = ComputeScreenPos(float4(output1.normalW, 1));
-                output1.worldPos = input[0].worldPos;
-
+               
                 g2f output2;
                 output2.pos = input[2].pos;
                 output2.normalW = lerp(input[2].normalW, normalWave, _Flat);
                 output2.diff = max(0, dot(output2.normalW, _WorldSpaceLightPos0.xyz)) * _LightColor0;
                 output2.grabPos = ComputeScreenPos(float4(output2.normalW, 1));
-                output2.worldPos = input[0].worldPos;
 
                 outStream.Append(output0);
                 outStream.Append(output1);
@@ -225,19 +216,9 @@ Properties
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.pos);
-                //float3 bump = i.normalW;
-                //float4 grabUV = i.grabPos;
-                //grabUV.xy = (i.grabPos.xy * _Shift * rand(grabUV.xy) + (bump.xy * _Distortion)) / i.grabPos.w;
+                col *= _Color;
+                col += _BaseColor;
 
-                float2 uv = float2(i.grabPos.x / i.grabPos.w, i.grabPos.y / i.grabPos.w);
-                // Distortionの値に応じてサンプリングするUVをずらす
-                float2 distortion = UnpackNormal(tex2D(_DistortionTex, i.normalW.xy + _Time.x * 0.1f)).rg;
-                distortion *= _Shift;
-
-
-                //fixed4 col = tex2D(_CameraOpaqueTexture, grabUV.xy + _Shift);
-
-                //fixed4 col = _BaseColor;
                 float3 normalW = normalize(i.normalW);
 
                 // フレネル反射率算出
@@ -251,14 +232,9 @@ Properties
                 //col.rgb = max(0.0, diffusePower) * _BaseColor.rgb * col.xyz;
                 float3 diffuseColor = (diffusePower) * R;
 
-                // スペキュラ
-                //float3 vertexToCameraW = normalize(_WorldSpaceCameraPos - i.pos.xyz);
 
-
-                float distance1 = distance(RayPosition, i.worldPos);
-
-                //float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vertexToCameraW)), 4.0f);
-
+                float distance1 = distance(RayPosition, i.pos);
+                
                 float3 vert2CameraWave = normalize(toLightDirW - fromVtxToCameraWave);
                 float3 specularColor = pow(max(0.0, dot(reflect(-toLightDirW, normalW), vert2CameraWave)), 3.0f);
                 col.rgb += (diffuseColor + (specularColor)) * _BaseColor * R;
@@ -268,18 +244,16 @@ Properties
                 col += perlinNoise(perNRandom) * 0.1;
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col = (col);
-                col.a *= _Alpha;
-
-                if (distance1 < 0.1)
+                col.a = _Alpha;
+                if(i.normalW.y > _DisColor)
                 {
-                    col.xyz = float3(0, 0, 0); 
+                    col.xyz = float3(1,1,1);
+                    col.a = 1;
                 }
-                
-                uv *= col;
-                uv = (uv + _Distortion) * rand(uv);
-
-                //return tex2D(_CameraOpaqueTexture, uv) * _Color * col;
-                //return tex2D(_CameraOpaqueTexture, grabUV.xy) * ((col + _Color) / 2);
+                else
+                {
+                    col.a = _Alpha;
+                }
                 return col;
             }
             ENDCG
