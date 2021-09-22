@@ -233,8 +233,8 @@ Shader "Unlit/normalnotinfinitywave"
                 col.rgb += specularColor;
                 float2 perNRandom = random2(i.normalW.xy);
 
-                col *= perlinNoise(normalW.xy * 8.0f);
-                col *= perlinNoise(perNRandom) / 2;
+                col *= perlinNoise(normalW.xy * 8.0f) / 30;
+                col *= perlinNoise(perNRandom) * 20;
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col.a = _Alpha;
                 return col;

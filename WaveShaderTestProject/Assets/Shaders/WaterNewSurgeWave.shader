@@ -1,6 +1,6 @@
 Shader "Unlit/WaterNewSurgeWave"
 {
-Properties
+    Properties
     {
         _MainTex("Texture", 2D) = "white" { }
         _BaseColor("Base color", Color) = (1.0, 1.0, 1.0, 1.0)
@@ -245,15 +245,15 @@ Properties
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 col = (col);
                 col.a = _Alpha;
-                if(i.normalW.y > _DisColor)
-                {
-                    col.xyz = float3(1,1,1);
-                    col.a = 1;
-                }
-                else
-                {
-                    col.a = _Alpha;
-                }
+                //if(i.normalW.y > _DisColor)
+                //{
+                //    col.xyz = float3(1,1,1);
+                //    col.a = 1;
+                //}
+                //else
+                //{
+                //    col.a = _Alpha;
+                //}
                 return col;
             }
             ENDCG
