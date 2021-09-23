@@ -346,6 +346,7 @@
 "Assets/MyGameFile/Scripts/used/Ship.cs"
 "Assets/Scripts/TestAnimation.cs"
 "Assets/Shaders/CheakCode.cs"
+"Assets/Shaders/FlamingRandom.cs"
 "Assets/Shaders/ShadowRenderer.cs"
 "Assets/TestSomething/Scripts & Shaders/WaveSurfaceRenderManager.cs"
 -langversion:8.0
