@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MyGameFile\Scripts\used\Ship.cs" />
+    <Compile Include="Assets\Homing\HomingObj.cs" />
     <Compile Include="Assets\Shaders\ShadowRenderer.cs" />
+    <Compile Include="Assets\Homing\HomingBullet.cs" />
     <Compile Include="Assets\Scripts\TestAnimation.cs" />
     <Compile Include="Assets\TestSomething\Scripts &amp; Shaders\WaveSurfaceRenderManager.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveCamera.cs" />
@@ -73,8 +75,22 @@
     <Compile Include="Assets\Shaders\FlamingRandom.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
-    <Compile Include="Assets\Homing\HomingObj.cs" />
-    <Compile Include="Assets\Homing\HomingBullet.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSound.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorFireball.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorLight.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorGlow.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorCloudRing.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\Detonator.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorForce.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorComponent.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSparks.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSpray.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MyGameFile\Material\shader\other\NewUnlitShader.shader" />
@@ -96,6 +112,7 @@
     <None Include="Assets\TestSomething\NewRayTracingShader.raytrace" />
     <None Include="Assets\TestSomething\feeltestUnlit.shader" />
     <None Include="Assets\MyGameFile\Material\shader\used\newClearWave.shader" />
+    <None Include="Assets\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\NewWaterWave.shader" />
     <None Include="Assets\TestSomething\Material &amp; Something Sprite\UnlitWaterShader.shader" />
     <None Include="Assets\MyGameFile\Material\shader\other\newnettokaratottekita.shader" />
