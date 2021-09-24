@@ -358,6 +358,8 @@
 "Assets/MyGameFile/Scripts/other/DataSendToShader.cs"
 "Assets/MyGameFile/Scripts/test/testreturn.cs"
 "Assets/MyGameFile/Scripts/test/TestSketch.cs"
+"Assets/MyGameFile/Scripts/used/Bullet.cs"
+"Assets/MyGameFile/Scripts/used/enemy.cs"
 "Assets/MyGameFile/Scripts/used/MoveCamera.cs"
 "Assets/MyGameFile/Scripts/used/MoveMesh.cs"
 "Assets/MyGameFile/Scripts/used/Player.cs"

@@ -11,6 +11,8 @@ public class HomingObj : MonoBehaviour
     [SerializeField] protected float land;
     [SerializeField] protected float fewTime;
     [SerializeField] protected float limitNear;
+    [SerializeField] protected GameObject ex;
+    [SerializeField] protected GameObject sp;
     // Start is called before the first frame update
     void Start()
     {

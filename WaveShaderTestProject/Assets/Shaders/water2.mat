@@ -94,7 +94,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.46
+    - _Alpha: 0.42
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -107,7 +107,7 @@ Material:
     - _Distortion: 10
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Flat: 0.739
+    - _Flat: 0.111
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0

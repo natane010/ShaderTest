@@ -9,12 +9,17 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float rotationSpeed;
     [SerializeField] KeyCode AttackKey;
+    [SerializeField] GameObject bu;
     //[SerializeField] GameObject body;
     int speedRot;
     Vector3 moveVector;//ÅIŒü‚«
     float angleVector;//c
     float pitchVector;//‰¡
     Quaternion rotation;
+    float yoVec;
+
+    float rayRange = Mathf.Infinity;    //50‚ÉÝ’è
+    RaycastHit hit;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         InputCon();
+
+        if (Input.GetKey(AttackKey))
+        {
+            Vector3 a = this.transform.position;
+            a.y = a.y - 10.0f;
+            Instantiate(bu, this.transform.position, Quaternion.identity);
+        }
     }
     private void FixedUpdate()
     {
@@ -41,6 +53,7 @@ public class Player : MonoBehaviour
         angleVector = Input.GetAxis("Vertical");
         //pitchVector = Input.GetAxis("Horizontal");‰¡
         pitchVector = 0f;
+        yoVec = 0f;
         if (Input.GetKey(KeyCode.D))
         {
             pitchVector++;
@@ -49,8 +62,17 @@ public class Player : MonoBehaviour
         {
             pitchVector--;
         }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            yoVec--;
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            yoVec++;
+        }
         rotation = Quaternion.Euler(angleVector * rotationSpeed * Time.deltaTime,
-                   pitchVector * rotationSpeed * Time.deltaTime , 0);
+                   pitchVector * rotationSpeed * Time.deltaTime , 
+                   yoVec * rotationSpeed * Time.deltaTime);
         rotation = rb.rotation * rotation;
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -59,7 +81,7 @@ public class Player : MonoBehaviour
                 speedRot++;
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
             if (speedRot > 0)
             {

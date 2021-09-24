@@ -59,38 +59,40 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorLight.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\Ship.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorComponent.cs" />
     <Compile Include="Assets\Homing\HomingObj.cs" />
     <Compile Include="Assets\Shaders\ShadowRenderer.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorFireball.cs" />
     <Compile Include="Assets\Homing\HomingBullet.cs" />
     <Compile Include="Assets\Scripts\TestAnimation.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
     <Compile Include="Assets\TestSomething\Scripts &amp; Shaders\WaveSurfaceRenderManager.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\used\MoveCamera.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSparks.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\test\testreturn.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
     <Compile Include="Assets\Shaders\CheakCode.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\Detonator.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorCloudRing.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSound.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorForce.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\other\DataSendToShader.cs" />
     <Compile Include="Assets\MyGameFile\Material\shader\Test\_Test_Raytracing_PostEffect.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\other\ColisionWaterRegulation.cs" />
     <Compile Include="Assets\MyGameFile\Scripts\test\TestSketch.cs" />
-    <Compile Include="Assets\Shaders\FlamingRandom.cs" />
-    <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
-    <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSound.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorFireball.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorLight.cs" />
     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorGlow.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorHeatwave.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorCloudRing.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorShockwave.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSmoke.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\Detonator.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorForce.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorComponent.cs" />
-    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSparks.cs" />
+    <Compile Include="Assets\Shaders\FlamingRandom.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" />
     <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSpray.cs" />
+    <Compile Include="Assets\MyGameFile\Scripts\used\MoveMesh.cs" />
+    <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
+    <Compile Include="Assets\MyGameFile\Scripts\used\Player.cs" />
+    <Compile Include="Assets\MyGameFile\Scripts\used\Bullet.cs" />
+    <Compile Include="Assets\MyGameFile\Scripts\used\enemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MyGameFile\Material\shader\other\NewUnlitShader.shader" />

@@ -106,11 +106,11 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DisColor: 1
-    - _Distortion: -0.098
+    - _Distortion: -0.141
     - _DstBlend: 0
     - _Effectivity: 0.5
     - _EnvironmentReflections: 1
-    - _Flat: 1
+    - _Flat: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
