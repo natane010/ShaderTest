@@ -70,7 +70,7 @@ Material:
     m_Ints: []
     m_Floats:
     - UseDiscard: 1
-    - _Alpha: 1
+    - _Alpha: 0.761
     - _Amount: 10
     - _Amplitude: 0.001
     - _Atten: 0.999
@@ -83,6 +83,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Displacement: 5
     - _DstBlend: 0
+    - _Flat: 1
     - _Frequency: 0.7
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -91,6 +92,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PlaneHeight: -4
     - _S2: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -104,10 +106,11 @@ Material:
     - _Thickness: 1
     - _UVSec: 0
     - _UseUIAlphaClip: 0
+    - _WaveLength: 1000
     - _WireThickness: 539
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0.48284578, b: 0.9529412, a: 1}
     - _Color: {r: 0, g: 0.4078431, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FillColor: {r: 0, g: 0.5144286, b: 1, a: 0}

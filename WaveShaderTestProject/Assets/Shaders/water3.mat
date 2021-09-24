@@ -89,7 +89,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.257
+    - _Alpha: 0.363
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -121,14 +121,14 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WaveLength: 3
+    - _WaveLength: 4
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0, g: 0.8492365, b: 1, a: 1}
+    - _Color: {r: 0, g: 0.8339977, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Spec: {r: 1, g: 1, b: 1, a: 1}
+    - _Spec: {r: 0, g: 0.46605062, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8999703932466689339

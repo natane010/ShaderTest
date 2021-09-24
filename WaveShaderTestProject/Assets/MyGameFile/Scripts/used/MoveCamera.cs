@@ -17,7 +17,17 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angle = Input.GetAxis("Horizontal") * rotateSpeed;
+        //float angle = Input.GetAxis("Horizontal") * rotateSpeed;
+        float angle = 0.0f;
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            angle++;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            angle--;
+        }
+        angle *= rotateSpeed;
         Vector3 pos = playerObj.transform.position;
         transform.RotateAround(pos, Vector3.up, angle);
         if (lastPos != pos)

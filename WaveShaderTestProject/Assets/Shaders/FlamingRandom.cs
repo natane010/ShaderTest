@@ -10,6 +10,8 @@ public class FlamingRandom : MonoBehaviour
     Material material;
     [SerializeField]Renderer renderer;
     [SerializeField] float speed;
+    [SerializeField] float _Lownum;
+    [SerializeField] float _Highnum;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +24,14 @@ public class FlamingRandom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = (Random.Range(0, 2) * 0.1f);
         nowDouble = material.GetFloat("_Distortion");
-        if (setNum >= 0.3)
+        if (setNum >= _Highnum)
         {
             setNum = nowDouble;
             randomNum = -1;
         }
-        else if (setNum <= -0.3)
+        else if (setNum <= _Lownum)
         {
             setNum = nowDouble;
             randomNum = 1;
@@ -37,6 +40,6 @@ public class FlamingRandom : MonoBehaviour
         //setNum = Mathf.Sin(Time.deltaTime) * speed;
         
         material.SetFloat("_Distortion", setNum);
-        print(setNum + " ," + nowDouble);
+        //print(setNum + " ," + nowDouble);
     }
 }

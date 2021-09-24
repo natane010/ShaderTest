@@ -4,47 +4,67 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] Rigidbody rb;
+    
     [SerializeField] float moveSpeed;
-    Vector3 move;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] KeyCode AttackKey;
+    //[SerializeField] GameObject body;
+    int speedRot;
+    Vector3 moveVector;//ç≈èIå¸Ç´
+    float angleVector;//èc
+    float pitchVector;//â°
+    Quaternion rotation;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //rb = this.GetComponent<Rigidbody>();
+        moveVector = Vector3.zero;
+        angleVector = 0f;
+        pitchVector = 0f;
+        speedRot = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float inputValueHori = 0.0f;
-        float inputValueVart = 0.0f;
-        if (Input.GetKey(KeyCode.E))
+        InputCon();
+    }
+    private void FixedUpdate()
+    {
+        rb.MoveRotation(rotation);
+        transform.Translate(0f, 0f, speedRot * moveSpeed * Time.deltaTime);
+    }
+    private void InputCon()
+    {
+        angleVector = Input.GetAxis("Vertical");
+        //pitchVector = Input.GetAxis("Horizontal");â°
+        pitchVector = 0f;
+        if (Input.GetKey(KeyCode.D))
         {
-            inputValueHori += 1;
+            pitchVector++;
         }
-        else if (Input.GetKey(KeyCode.Q))
+        else if (Input.GetKey(KeyCode.A))
         {
-            inputValueHori -= 1;
+            pitchVector--;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        rotation = Quaternion.Euler(angleVector * rotationSpeed * Time.deltaTime,
+                   pitchVector * rotationSpeed * Time.deltaTime , 0);
+        rotation = rb.rotation * rotation;
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            inputValueVart += 1;
+            if (speedRot <= 5)
+            {
+                speedRot++;
+            }
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            inputValueVart -= 1;
-        }
-        move = new Vector3(0, inputValueVart * moveSpeed, moveSpeed);
-        if (inputValueVart != 0.0)
-        {
-            transform.localPosition += move * Time.deltaTime;
-        }
-        else
-        {
-            transform.localPosition += new Vector3(0, 0 ,moveSpeed) * Time.deltaTime;
-        }
-        if (inputValueHori != 0)
-        {
-            transform.Rotate(new Vector3(0, inputValueHori, 0));
+            if (speedRot > 0)
+            {
+                speedRot--;
+            }
         }
     }
 }

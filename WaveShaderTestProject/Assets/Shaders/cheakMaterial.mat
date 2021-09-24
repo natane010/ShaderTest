@@ -106,7 +106,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DisColor: 1
-    - _Distortion: -0.3
+    - _Distortion: -0.098
     - _DstBlend: 0
     - _Effectivity: 0.5
     - _EnvironmentReflections: 1
